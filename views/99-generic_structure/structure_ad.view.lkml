@@ -1,8 +1,8 @@
 include: "/views/99-generic_structure/ad_criterion_base.view.lkml"
 include: "/views/99-generic_structure/entity_base.view.lkml"
-view: ad {
+view: structure_ad {
+  extension: required
   extends: [entity_base]
-  sql_table_name: crg-dclk-dt.google_ads_transfers_country_road_au.Ad_4329332812 ;;
 
   dimension: _data {
     sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;

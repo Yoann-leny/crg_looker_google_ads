@@ -1,10 +1,8 @@
-include: "/views/99-generic_structure/ad_criterion_base.view.lkml"
-include: "/views/99-generic_structure/entity_base.view.lkml"
+include: "/views/99-generic_structure/*"
 
-view: keyword {
-  extends: [ad_criterion_base, entity_base]
-  sql_table_name: crg-dclk-dt.google_ads_transfers_country_road_au.Keyword_4329332812 ;;
-
+view: structure_keyword {
+extension: required
+extends: [ad_criterion_base,entity_base]
   dimension: _data {
     sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
   }
@@ -213,15 +211,15 @@ view: keyword {
     drill_fields: [detail*, ad_group.detail*]
   }
 
-  dimension: cpc_bid_usd {
-    type: number
-    sql: coalesce((${cpc_bid} / 1000000), ${ad_group.cpc_bid_usd}) ;;
-  }
+  # dimension: cpc_bid_usd {
+  #   type: number
+  #   sql: coalesce((${cpc_bid} / 1000000), ${structure_ad_group.cpc_bid_usd}) ;;
+  # }
 
-  dimension: cpm_bid_usd {
-    type: number
-    sql: coalesce((${cpm_bid} / 1000000), ${ad_group.cpm_bid_usd}) ;;
-  }
+  # dimension: cpm_bid_usd {
+  #   type: number
+  #   sql: coalesce((${cpm_bid} / 1000000), ${structure_ad_group.cpm_bid_usd}) ;;
+  # }
 
   # ----- Detail ------
   set: detail {

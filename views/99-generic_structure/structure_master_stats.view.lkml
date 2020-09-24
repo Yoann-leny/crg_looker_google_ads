@@ -3,6 +3,7 @@ include: "/views/99-generic_structure/base.view.lkml"
 include: "/views/99-generic_structure/stats.view.lkml"
 
 view: structure_master_stats {
+  extension: required
     extends: [ad_criterion_base, base, stats]
 
 

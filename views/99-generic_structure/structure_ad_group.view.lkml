@@ -1,8 +1,7 @@
-include: "/views/99-generic_structure/ad_criterion_base.view.lkml"
-include: "/views/99-generic_structure/entity_base.view.lkml"
-view: ad_group {
+include: "/views/**/*"
+view: structure_ad_group {
+  extension: required
   extends: [entity_base]
-  sql_table_name: crg-dclk-dt.google_ads_transfers_country_road_au.AdGroup_4329332812;;
 
   dimension: _data {
     sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
@@ -36,7 +35,7 @@ view: ad_group {
       url: "/dashboards/google_adwords::ad_performance?Ad%20Group%20Name={{ value | encode_uri }}&Campaign%20Name={{ campaign.campaign_name._value | encode_uri }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
-    required_fields: [campaign.campaign_name]
+    required_fields: [dj_campaign.campaign_name]
   }
 
   dimension: ad_group_status {
