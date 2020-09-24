@@ -81,7 +81,7 @@ view: structure_campaign {
 
   dimension: campaign_category {
     type: string
-    sql:  SPLIT(${campaign_name}, ' - ')[SAFE_OFFSET(3)] ;;
+    sql:  SPLIT(${campaign_name}, ' - ')[SAFE_OFFSET(2)] ;;
     drill_fields: [campaign_name]
   }
 
