@@ -95,11 +95,20 @@ view: structure_master_stats {
         sql: ${TABLE}.ConversionValue ;;
       }
 
+  measure: total_revenue {
+    type: sum
+    sql: ${conversion_value} ;;
+  }
+
       dimension: conversions {
         type: number
         sql: ${TABLE}.Conversions ;;
       }
 
+  measure: total_conversions {
+    type: sum
+    sql: ${conversions} ;;
+  }
       dimension: cost {
         type: number
         sql: ${TABLE}.Cost ;;
