@@ -6,5 +6,6 @@ include: "/explores/**/*"
 
 
 persist_for: "24 hours"
+week_start_day: saturday
 
 label: "01 Google Ads"
