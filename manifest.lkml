@@ -18,6 +18,10 @@ constant: DJ_GOOGLE_ADS_ID {
   value: "6500142443"
   export: override_optional
 }
+constant: DJ_FORECAST_DATASET {
+  value: "01_forecasting_data"
+  export: override_optional
+}
 
 
 constant: MINIMUM_SPEND_CLUSTER {
